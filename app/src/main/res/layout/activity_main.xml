@@ -23,4 +23,9 @@
         android:id="@+id/btnTimePickerDialog"
         android:text="@string/time_picker_dialog"/>
 
+    <Button
+        style="@style/style_1"
+        android:text="@string/progress_dialog"
+        android:id="@+id/btnProgressDialog"/>
+
 </LinearLayout>

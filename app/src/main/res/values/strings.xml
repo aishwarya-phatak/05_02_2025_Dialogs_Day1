@@ -3,4 +3,5 @@
     <string name="alert_dialog">Alert Dialog</string>
     <string name="date_picker_dialog">Date Picker Dialog</string>
     <string name="time_picker_dialog">Time Picker DIalog</string>
+    <string name="progress_dialog">Progress Dialog</string>
 </resources>
