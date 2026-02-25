@@ -4,4 +4,8 @@
     <string name="date_picker_dialog">Date Picker Dialog</string>
     <string name="time_picker_dialog">Time Picker DIalog</string>
     <string name="progress_dialog">Progress Dialog</string>
+    <string name="enter_the_username">Enter the username</string>
+    <string name="enter_the_password">Enter the password</string>
+    <string name="submit">Submit</string>
+    <string name="custom_dialog">Custom Dialog</string>
 </resources>

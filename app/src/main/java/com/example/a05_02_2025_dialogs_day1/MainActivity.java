@@ -21,7 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnAlertDialog,btnDatePickerDialog,btnTimePickerDialog, btnProgressDialog;
+    Button btnAlertDialog,btnDatePickerDialog,btnTimePickerDialog, btnProgressDialog, btnCustomDialog;
     ProgressDialog progressDialog;
 
     @Override
@@ -34,11 +34,35 @@ public class MainActivity extends AppCompatActivity {
         btnDatePickerDialog = findViewById(R.id.btnDatePickerDialog);
         btnTimePickerDialog = findViewById(R.id.btnTimePickerDialog);
         btnProgressDialog = findViewById(R.id.btnProgressDialog);
+        btnCustomDialog = findViewById(R.id.btnCustomDialog);
 
         btnAlertDialog.setOnClickListener(new BtnAlertDialogClickListener());
         btnDatePickerDialog.setOnClickListener(new BtnDatePickerClickDialogListener());
         btnTimePickerDialog.setOnClickListener(new BtnTimePickerDialogClickListener());
         btnProgressDialog.setOnClickListener(new MyProgressDialogClickListener());
+        btnCustomDialog.setOnClickListener(new CustomDialogClickListener());
+    }
+
+    public class CustomDialogClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            MyCustomDialog myCustomDialog = new MyCustomDialog(MainActivity.this,new MyCustomDialogClickListener());
+            myCustomDialog.setContentView(R.layout.dialog_custom);
+            myCustomDialog.show();
+        }
+    }
+
+
+    public class MyCustomDialogClickListener implements MyCustomDialog.OnMyCustomDialogClickListener{
+        @Override
+        public void onPositiveClick() {
+            Toast.makeText(MainActivity.this,"Positive Clicked",Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        public void onNegativeClick() {
+            Toast.makeText(MainActivity.this,"Negative Clicked",Toast.LENGTH_LONG).show();
+        }
     }
 
     public class MyProgressDialogClickListener implements View.OnClickListener {
